@@ -18,7 +18,7 @@ class Bank:
             if user.numero_compte == numero_compte:
                 return user
         print("No user found.")
-        return false
+        return False
     
     def getSoldeBank(self):
         sum = 0
