@@ -3,8 +3,9 @@ from AccountEpargne import AccountEpargne
 from AccountCourant import AccountCourant
 
 class User:
-    def __init__(self, username):
+    def __init__(self, username, id_user):
         self.username = self._validate_username(username)
+        self.id_user = id_user
         self.accounts = []
 
     def openAccount(self, type_account, account_number, first_depot=0):
