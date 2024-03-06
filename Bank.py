@@ -15,7 +15,12 @@ class Bank:
         return new_user
     
     def getUserByID(self, id_user):
-        return self.users[id_user]
+        if self.users.has_key(id_user):
+            return self.users[id_user]
+        else :
+            print("No user found.")
+            return False
+        
     
     def getSoldeBank(self):
         sum = 0
