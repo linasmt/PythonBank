@@ -14,7 +14,7 @@ class User:
             new_account = AccountCourant(account_number, first_depot)
         else:
             print("Invalid account type")
-            return false
+            return False
         self.accounts.append(new_account)
         
 
@@ -23,3 +23,6 @@ class User:
             raise ValueError("Username cannot be empty")
         return username
 
+    def showAccounts(self):
+        for account in self.accounts:
+            print("Compte " + account.number_account + ": " + str(account.amount) + " €")

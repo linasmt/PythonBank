@@ -8,8 +8,9 @@ class Bank:
     def registerUser(self, user):
         self.users.append(user)
 
-    def registerNewUser(self, user_name, numero_compte, first_depot = 0):
-        new_user = User(user_name, numero_compte, first_depot)
+    def registerNewUser(self, user_name, numero_compte, first_depot = 0, type_account="courant"):
+        new_user = User(user_name)
+        new_user.openAccount(type_account, numero_compte, first_depot)
         self.registerUser(new_user)
     
     def getUserByNumeroCompte(self, numero_compte):
@@ -22,5 +23,7 @@ class Bank:
     def getSoldeBank(self):
         sum = 0
         for user in self.users:
-            sum += user.somme
+            if len(user.accounts) > 0:
+                for account in user.accounts:
+                    sum += account.amount
         return sum
