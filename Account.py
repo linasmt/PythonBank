@@ -15,3 +15,10 @@ class Account:
         if amount < 0:
             raise ValueError("Deposit amount must be positive")
         self.amount += amount
+    
+    def check_balance(self, user, amount):
+        if (self.amount + amount < 0):
+            return "false"
+        else:
+            return "true"
+        return "User not found"

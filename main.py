@@ -7,11 +7,14 @@ if __name__ == '__main__':
     user1.openAccount("courant", "1234667897412", 5)
     user1.openAccount("epargne", "1236547896542", 23)
     user1.showAccounts()
-    print(vars(user1))
+    #print(vars(user1))
     bank.registerUser(user1)
     
-    user2 = bank.registerNewUser("Fabrice éboué", 2, "7418529630458", 50)
+    bank.registerNewUser("Fabrice éboué", 2, "7418529630458", 50)
+    user2 = bank.getUserByID(2)
     user2.showAccounts()
 
-    print(vars(bank))
-    print(bank.getSoldeBank())
+    #print(vars(bank))
+    #print(bank.getSoldeBank())
+
+    print(bank.transaction(50, user1, user2, "1234667897412", "7418529630458"))
